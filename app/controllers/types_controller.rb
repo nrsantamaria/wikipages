@@ -4,6 +4,11 @@ class TypesController < ApplicationController
     render :index
   end
 
+  def show
+    @type = Type.find(params[:id])
+    render :show
+  end
+
   def new
     @type = Type.new
     render :new
@@ -16,6 +21,11 @@ class TypesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @type = Type.find(params[:id])
+    render :edit
   end
 
   private
