@@ -32,7 +32,11 @@ class BusinessesController < ApplicationController
     end
   end
 
-
+  def destroy
+    @business = Business.find(params[:id])
+    @business.destroy
+    redirect_to type_path(@business.type)
+  end
 
 private
   def business_params

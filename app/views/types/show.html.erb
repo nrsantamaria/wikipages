@@ -7,8 +7,8 @@
     <% @type.businesses.each do |business| %>
       <li>
         <%= business.name %> |
-        <%= link_to "Edit", edit_type_business_path(@type, business) %> |
-        <%= link_to "Delete", type_business_path(@type, business),
+        <%= link_to "Edit business", edit_type_business_path(@type, business) %> |
+        <%= link_to "Delete business", type_business_path(@type, business),
                                  :data => {:confirm => "Are you sure?",
                                                 :method => "delete"} %>
       </li>
@@ -18,13 +18,11 @@
   <p>There are no businesses yet!</p>
 <% end %>
 
-
-
 <%= link_to "Add a Business", new_type_business_path(@type)%>
 <br>
-<%= link_to "edit", edit_type_path(@type)%>
+<%= link_to "edit type", edit_type_path(@type)%>
 <br>
-<%= link_to "delete", type_path(@type),
+<%= link_to "delete type", type_path(@type),
                       :data => { :confirm => "you sure????",
                       :method => "delete"} %>
 
