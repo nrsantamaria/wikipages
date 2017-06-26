@@ -3,7 +3,6 @@ class BusinessesController < ApplicationController
   def new
     @type = Type.find(params[:type_id])
     @business = @type.businesses.new
-    render :new
   end
 
   def create
@@ -19,7 +18,6 @@ class BusinessesController < ApplicationController
   def edit
     @type = Type.find(params[:type_id])
     @business = Business.find(params[:id])
-    render :edit
   end
 
   def update
