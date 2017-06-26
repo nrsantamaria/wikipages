@@ -28,6 +28,15 @@ class TypesController < ApplicationController
     render :edit
   end
 
+  def update
+    @type = Type.find(params[:id])
+    if @type.update(type_params)
+      redirect_to types_path
+    else
+      render :edit
+    end
+  end
+
   private
   def type_params
     params.require(:type).permit(:name)
